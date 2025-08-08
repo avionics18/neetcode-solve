@@ -10,7 +10,7 @@ public class C03_1_Two_Sum {
             // convert a string into an integer array
             int[] nums = Arrays.stream(str.split(" "))
                          .filter(s -> !s.isEmpty())
-                         .mapToInt(Integer::parseInt)
+                         .mapToInt(Integer::parseInt) // it takes a mapping function as parameter
                          .toArray();
             int target = sc.nextInt();
             int[] res = twoSum(nums, target);
