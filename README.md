@@ -4,7 +4,13 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 
 <br>
 
-### Arrays & Hashing
+#### Table of Contents
+
+1. [Arrays & Hashing](#1-arrays--hashing)
+
+<br>
+
+### 1. Arrays & Hashing
 
 |Problem|Trick|Link|
 |-|-|-|
