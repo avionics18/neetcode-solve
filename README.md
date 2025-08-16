@@ -7,6 +7,7 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 #### Table of Contents
 
 1. [Arrays & Hashing](#1-arrays--hashing)
+2. [Two Pointers](#2-two-pointers)
 
 <br>
 
@@ -23,3 +24,9 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 |[238-Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self)|Make use of Prefix & Postfix Multiplication. For optimized solution calculate everything in the `res[]` array by only using two variables `pre` and `post`.|[Code](01_Arrays_and_Hashing/C07_238_Product_of_Array_Except_Self.java)|
 |[36-Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)|You'll need three array of `HashSet` - one for row, column and box. Then traverse the elements of the board one-by-one and check in respective hashset, if certain element is repeating twice - if so return false i.e. not a valid sudoku. If everything passes implies valid sudoku. For identifying hashset for the box use `int boxIndex = (i/3) * 3 + (j/3);`|[Code](01_Arrays_and_Hashing/C08_36_Valid_Sudoku.java)|
 |[128-Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)|**Approach 1:** Sort the `nums[]` array. Start from `i=1`, compare its prev element and ignore if duplicate. If not consecutive update `LCS_count` and reset `CCS_count`. Finally return `Math.max(LCS_count, CCS_count)`.<br>**Approach 2:** Store all the elements in a **HashSet**, and search if `num-1` exists - if *true* move on. If *false* - implies it may be the start of a LCS, so keep finding `(n+1)` from that point, keep incrementing `CCS_count`. After that update `LCS_count`, and reset `CCS_count` back to 1. Finally return `LCS_count`.|[Code](01_Arrays_and_Hashing/C09_128_Longest_Consecutive_Sequence.java)|
+
+### 2. Two Pointers
+
+|Problem|Trick|Link|
+|-|-|-|
+|[125-Valid Palindrome](https://leetcode.com/problems/valid-palindrome)|**Approach 1:** Remove all the non-alphanumeric characters from the original string, and then compare the original and its reverse lowercased strings.<br>**Approach 2:** Use `Two-Pointer` Approach. Left & Right pointers start from begin and end of the string. Keep incrementing their positions if the character is non-alphanumeric, if both are alphanumeric then ensure their lowercased character are same otheriwse return false immediately. Prepare for next iteration if they are equal. If the string passes the loop implies it is a valid palindrome.|[Code](01_Arrays_and_Hashing/C01_125_Valid_Palindrome.java)|
