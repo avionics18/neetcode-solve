@@ -8,6 +8,7 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 
 1. [Arrays & Hashing](#1-arrays--hashing)
 2. [Two Pointers](#2-two-pointers)
+3. [Sliding Window](#3-sliding-window)
 
 <br>
 
@@ -34,3 +35,9 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 |[15-Three Sum](https://leetcode.com/problems/3sum/)|The problem boils down to applying two sum problem for each element in the `nums[]` array. But the challenges are faced for duplicate elements, as they result in duplicate triplets in the result. To resolve **SORT** the array, and ignore the duplicate adjacent values for `i` as well as `j`. And also run the loop till `nums[i]<=0`, as for all other positive values, anyway the sum won't be equal to 0.|[Code](02_Two_Pointers/C03_15_Three_Sum.java)|
 |[11-Container With Most Water](https://leetcode.com/problems/container-with-most-water/)|The max area (water contained) depends on the smaller height bar. So, using two pointer approach, find the area then update the `max_area` if needed. After that compare left/right whichever has small height, increment that pointer in its respective direction. Keep on calculating the area and update the `max_area` till `left <= right`.|[Code](02_Two_Pointers/C04_11_Container_With_Most_Water.java)|
 |[42-Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)|The main concept of this problem is that the water trapped depends on the minimum height of the surrounding surfaces. We have two pointers `left` and `right`. And two variables tracking left max height and right max height. We move the pointers whichever is less, and calculate the water trapped at each position and update the left max / right max height accordingly. `T.C = O(n)` & `S.C = O(1)`|[Code](02_Two_Pointers/C05_42_Trapping_Rain_Water.java)|
+
+### 3. Sliding Window
+
+|Problem|Trick|Link|
+|-|-|-|
+|[121-Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)|Concept is that max profit can be calculated from the most min price, but caveat is that there can be multiple min(s), update profit only when you get a max profit.<br>Need two variables to track `min` and `profit`. Set `min = prices[0]`. Update `min` only when you encounter the most minimum element of the `prices[]` and update `profit` only when you get a profit greater than the previous profit calculated so far.|[Code](03_Sliding_Window/C01_121_Buy_and_Sell_Stock.java)|
