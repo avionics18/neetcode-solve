@@ -9,6 +9,7 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 1. [Arrays & Hashing](#1-arrays--hashing)
 2. [Two Pointers](#2-two-pointers)
 3. [Sliding Window](#3-sliding-window)
+4. [Linked List](#4-linked-list)
 
 <br>
 
@@ -42,3 +43,12 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 |-|-|-|
 |[121-Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock)|Concept is that max profit can be calculated from the most min price, but caveat is that there can be multiple min(s), update profit only when you get a max profit.<br>**My Approach:** Need two variables to track `min` and `profit`. Set `min = prices[0]`. Update `min` only when you encounter the most minimum element of the `prices[]` and update `profit` only when you get a profit greater than the previous profit calculated so far.<br>**Sliding Window Approach:** Window is formed by the two pointers `left` & `right`. `right` will go till `prices.length - 1`. Update `left`|[Code](03_Sliding_Window/C01_121_Buy_and_Sell_Stock.java)|
 |[3-Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|...|[Code](03_Sliding_Window/C02_3_Longest_Substring_Without_Repeating_Characters.java)|
+
+### 4. Linked List
+
+|Problem|Trick|Link|
+|-|-|-|
+|[206-Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)|For reversing we need three trackers. When you are at a particular node, you need the current node's ref, it's previous node to whom it should point now, and the next node for traversing ahead. Start normally as you would do with `prev_node = null`, `curr_node = head`, and `next_node` will be inside loop as it will update at every node.|[Code](04_Linked_List/C01_206_Reverse_Linked_List.java)|
+|[21-Merge Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)|You traverse both the list simultaneously joining the smaller nodes. And if any list is left out, after the loop connect with its head and now you have the merged sorted list. *The only trick here is that you will need a `dummy_node` to start with*. Use `curr_node` to traverse and link the smaller nodes.|[Code](04_Linked_List/C02_21_Merge_Sorted_Lists.java)|
+|[141-Linked List Cycle Detection](https://leetcode.com/problems/linked-list-cycle/)|Run two pointers - `slow` and `fast` pointer. If there is a cycle `fast != null` and `fast.next != null`, these two conditions will never be true, and `slow == fast`, the moment that happens return `true`. And if there is no cycle, that is the traversing loop terminates, return `false`.|[Code](04_Linked_List/C03_141_LL_Cycle_Detection.java)|
+|[143-Reorder List](https://leetcode.com/problems/reorder-list/)|Divide the LL from the mid-point (for even-length lists use the 1st node among the 2 mid nodes) and reverse the second half of the list. Then start inserting the nodes after each first half node untill any of the two lists finishes. (Since if original list had even nodes then half will have equal no. of nodes whereas for original odd-length list, the 2nd half will be small - so stop when the 2nd half finishes, no more insertions required).|[Code](04_Linked_List/C04_143_Reorder_List.java)|
