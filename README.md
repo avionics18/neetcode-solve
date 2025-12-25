@@ -6,7 +6,7 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 
 #### Table of Contents
 
-1. [Arrays & Hashing](#1-arrays--hashing)
+1. [Arrays & Hashing](#1-arrays-hashing)
 2. [Two Pointers](#2-two-pointers)
 3. [Sliding Window](#3-sliding-window)
 4. [Linked List](#4-linked-list)
@@ -52,3 +52,4 @@ Contains problems and solutions to [neetcode](https://neetcode.io/) 150 problems
 |[21-Merge Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)|You traverse both the list simultaneously joining the smaller nodes. And if any list is left out, after the loop connect with its head and now you have the merged sorted list. *The only trick here is that you will need a `dummy_node` to start with*. Use `curr_node` to traverse and link the smaller nodes.|[Code](04_Linked_List/C02_21_Merge_Sorted_Lists.java)|
 |[141-Linked List Cycle Detection](https://leetcode.com/problems/linked-list-cycle/)|Run two pointers - `slow` and `fast` pointer. If there is a cycle `fast != null` and `fast.next != null`, these two conditions will never be true, and `slow == fast`, the moment that happens return `true`. And if there is no cycle, that is the traversing loop terminates, return `false`.|[Code](04_Linked_List/C03_141_LL_Cycle_Detection.java)|
 |[143-Reorder List](https://leetcode.com/problems/reorder-list/)|Divide the LL from the mid-point (for even-length lists use the 1st node among the 2 mid nodes) and reverse the second half of the list. Then start inserting the nodes after each first half node untill any of the two lists finishes. (Since if original list had even nodes then half will have equal no. of nodes whereas for original odd-length list, the 2nd half will be small - so stop when the 2nd half finishes, no more insertions required).|[Code](04_Linked_List/C04_143_Reorder_List.java)|
+|[19-Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)|**Brute Force Approach:** Removing nth node from end is euqivalent to removing `(N - n)`th node from start and for that we need to reach till `(N-n-1)`th node (NOTE: indexing begins from 0 for start of LL). <br> **Optimized Approach:** In the previous method we had to do two pass (one for finding the length of LL, and other for reaching till `prev_node` of nth node). But we can do the same thing in only one pass - Use the **offset method**. Have two pointers, move the `first` pointer n steps ahead and then move both the pointers simultaneously till the `first` pointer reaches `null`. Now `second` pointer will be pointing to the `prev_node` of the node which we want to delete.|[Code](04_Linked_List/C05_19_Remove_Nthnode_From_End.java)|
